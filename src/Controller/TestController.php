@@ -17,6 +17,19 @@ class TestController extends AbstractController
         ]);
     }
     /**
+     * @Route("/test/detail", name="detail")
+     */
+    public function detail()
+    {
+        return $this->render('test/detail.html.twig', [
+            'username' => 'andrejmaly',
+            'password' => 'velicesložitéheslo',
+            'name' => 'Andrej Malý',
+            'age' => 20,
+            'controller_name' => 'TestController',
+        ]);
+    }
+    /**
      * @Route("/test/{name}", name="hello")
      */
     public function hello($name)
@@ -25,4 +38,5 @@ class TestController extends AbstractController
             'controller_name' => $name,
         ]);
     }
+
 }

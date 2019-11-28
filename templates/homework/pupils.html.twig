@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeworkController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <table style="width:50%">
+        <tr><td>jméno</td><td>předmět</td><td>známka</td></tr>
+        {% for pupil in pupils if pupil.grade<3 %}
+            <tr><td>{{ pupil.name }}
+                <td>{{ pupil.subject }}</td>
+                <td>{{ pupil.grade }}</td></tr>
+        {% endfor %}
+    </table>
+
+<br>
+    <a href ="{{ path('index') }}">Index</a>
+    <a href ="{{ path('remember') }}">Remember</a>
+    Pupils
+    <a href ="{{ path('pythagoras') }}">Pythagoras</a>
+
+
+{% endblock %}
